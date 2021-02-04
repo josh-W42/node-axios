@@ -1,0 +1,6 @@
+<% data.Search.forEach(movie => { %>
+    <h2><%= movie.Title %> </h2>
+    <p>Released on: <%= movie.Year %> </p> 
+    <p>Type: <%= movie.Type %> </p>
+    <img style="height: 300px;" src="<%= movie.Poster %> " alt='picture for <%= movie.Title %>'/>
+<% }) %>
