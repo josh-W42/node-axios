@@ -48,6 +48,15 @@ app.get('/omdb', (req, res) => {
     });
 });
 
+app.get('/swapi/show', (req, res) => {
+    axios.get(`https://swapi.dev/api/people/${req.query}`)
+    .then((response) => {
+        console.log(response.data);
+    }).catch((error) => {
+        console.log(`An Error has occured, status: ${error.response.status} - ${error.response.statusText}`);
+    });
+});
+
 // LISTENER
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
